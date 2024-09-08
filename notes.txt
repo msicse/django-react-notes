@@ -1,0 +1,34 @@
+Create virtual enviorment
+	python -m venv folder_name
+Activate from powershell 
+	 .\folder_name\Scripts\Activate.ps1
+
+Install All dependencis 
+    Create requirements.txt
+    pip install -r .\requirements.txt
+
+Create Project
+	 django-admin startproject backend
+
+Create App
+	python .\manage.py startapp api
+
+Serializer - convert python object   to JSON 
+
+
+
+Frontend - React
+--------------------
+Install React
+    npm create vite@latest my-project -- --template react
+
+Packeges - axios, react-router-dom, jwt-decode
+    npm install axios react-router-dom jwt-decode
+
+
+Install Tailwind
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+
+
+
