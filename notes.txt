@@ -1,9 +1,9 @@
 Create virtual enviorment
 	python -m venv folder_name
-Activate from powershell 
+Activate from powershell
 	 .\folder_name\Scripts\Activate.ps1
 
-Install All dependencis 
+Install All dependencis
     Create requirements.txt
     pip install -r .\requirements.txt
 
@@ -13,7 +13,7 @@ Create Project
 Create App
 	python .\manage.py startapp api
 
-Serializer - convert python object   to JSON 
+Serializer - convert python object   to JSON
 
 
 
@@ -29,6 +29,9 @@ Packeges - axios, react-router-dom, jwt-decode
 Install Tailwind
     npm install -D tailwindcss postcss autoprefixer
     npx tailwindcss init -p
+
+Linter check
+
 
 
 
