@@ -29,4 +29,4 @@ jobs:
 
       - name: Run Pylint
         run: |
-          pylint .
+          pylint ./backend
