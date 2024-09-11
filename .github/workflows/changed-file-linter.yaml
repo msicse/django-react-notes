@@ -1,0 +1,43 @@
+name: Lint Django App changed files
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: Get list of changed files
+        id: changed-files
+        run: |
+          # Get the list of files changed in the pull request, filtering for .js files
+          files_changed=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '*.js')
+
+          # If no .js files have changed, exit
+          if [ -z "$files_changed" ]; then
+            echo "No JavaScript files changed."
+            exit 0
+          fi
+
+          # Output the list of changed files
+          echo "::set-output name=files::$files_changed"
+
+      - name: set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencis
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ./backend/requirements.txt
+          pip install pylint
+
+      - name: Run Pylint on changed files
+        run: |
+          pylint ${{ steps.changed-files.outputs.files }}
