@@ -16,7 +16,7 @@ jobs:
         id: changed-files
         run: |
           # Get the list of files changed in the pull request, filtering for .js files
-          files_changed=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '*.js')
+          files_changed=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '*.py')
 
           # If no .js files have changed, exit
           if [ -z "$files_changed" ]; then
