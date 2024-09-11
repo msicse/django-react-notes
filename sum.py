@@ -5,6 +5,14 @@ def add_numbers(a, b):
 def sub_numbers(a, b):
     """Function to add two numbers."""
     return a - b
+
+
+def mul_numbers(a, b):
+    """Function to add two numbers."""
+    return a * b
+
+
+
 # Taking input from the user
 num1 = float(input("Enter first number: "))
 num2 = float(input("Enter second number: "))
